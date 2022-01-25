@@ -57,7 +57,25 @@ def order_size_iter(order):
 ####### Session 2
 
 def order_cost(order):
-    
+
+    patty_price = 1.17
+    biggie_price = 0.50
+    combo = order % 10
+
+    if order == 0:
+        return 0
+    else:
+        if combo > 4:
+            return order_cost(order // 10) + (combo * 1.17) + 0.50
+        else:
+            return order_cost(order // 10) + combo * 1.17
+
+
+    # order 123
+    #price of combo 3 -> order_cost(123 // 10) + 3 * 1.17
+    #price of combo 2 -> order_cost(12 // 10) + 2 * 1.17
+    #price of combo 1 -> order_cost(1 // 10) + 1 * 1.17
+    #price of 0 -> return 0
 
 def order_cost_iter(order):
     sum = 0
@@ -77,7 +95,7 @@ def order_cost_iter(order):
 
     return price
         
-print(order_cost_iter(12))
+print(order_cost(42))
 
     
  
