@@ -54,7 +54,30 @@ def order_size_iter(order):
 
     return count
 
-print(order_size(12345678))
+####### Session 2
+
+def order_cost(order):
+    
+
+def order_cost_iter(order):
+    sum = 0
+    patty_price = 1.17
+    biggie_price = 0.50
+    price = 0
+    n = len(str(order))
+    i = 0
+    for i in range (n):
+        combo = order % 10
+        if combo < 5:
+            price = price + combo * 1.17
+            order = order // 10
+        else:
+            price = price + combo * 1.17 + 0.50
+            order = order // 10
+
+    return price
+        
+print(order_cost_iter(12))
 
     
  
