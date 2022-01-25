@@ -6,6 +6,8 @@
 # Note that written answers are commented out to allow us to run your
 # code easily while grading your problem set.
 
+import time
+from datetime import datetime
 
 def biggie_size(combo):
     return combo + 4
@@ -94,6 +96,59 @@ def order_cost_iter(order):
             order = order // 10
 
     return price
+
+def add_orders(order1, order2):
+    return str(order1) + str(order2)
+
+# 2(a) - O(n ^ 2)
+# 2(b) - O(n)
+# 2(c) - O(n)
+
+start_time = datetime.now()
+
+def fact(n):
+    if n == 0:
+        return 1
+    else:
+        return n * fact(n-1)
+    
+end_time = datetime.now()
+
+#3 - Runtime - 0ms, Space - O(n)
+
+#4
+def fact_iter(n):
+
+    i = 1
+    total = 1
+    for i in range (n):
+        total = total * n
+        n-=1
+
+    return total
+
+#5
+start_time = datetime.now()
+def find_e(n):
+    if n == 0:
+        return 1
+    else:
+        return 1/fact(n) + find_e(n - 1)
+
+end_time = datetime.now()
+#Running time - 0ms, Space - O(n)
+
+#6
+def is_divisible(n, x):
+    return n % x == 0
+
+def is_prime(num):
+    
+print("--- %s seconds ---" % (end_time - start_time))
+
+print(is_divisible(1000,13))
+
+print(fact_iter(6))
         
 print(order_cost(42))
 
