@@ -143,6 +143,22 @@ def is_divisible(n, x):
     return n % x == 0
 
 def is_prime(num):
+
+
+    if num > 1:
+
+        for i in range (2,num):
+            if is_divisible(num, i) == True:
+                return False
+        else:
+            return True
+
+
+    else:
+        return False
+            
+        
+        
     
 print("--- %s seconds ---" % (end_time - start_time))
 
@@ -151,6 +167,8 @@ print(is_divisible(1000,13))
 print(fact_iter(6))
         
 print(order_cost(42))
+
+print(is_prime(10))
 
     
  
