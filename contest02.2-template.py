@@ -18,23 +18,41 @@ from runes import *
 # ============
 # Write your function here. It should return a rune.
 
-def huge_cross (rune, n):
+def square_of_runes (rune, n):
+    resized_rune = scale(0.5, rune)
 
     if n == 1:
-        return rune
+        return resized_rune
+    if n == 2:
+        top_row = beside(resized_rune, resized_rune)
+        return stack(top_row, top_row)
     else:
-        pic = rune
-        new_pic = rune
-        final_pic = rune
-        for i in range (1, n):
-            new_pic = stack(pic, new_pic)
-            new_pic = quarter_turn_left(new_pic)
+        rotated_left_rune = quarter_turn_left(rune)
+        stacked_runes = stackn( n - 2, rotated_left_rune )
+        rotated_stacked_runes = quarter_turn_right (stacked_runes)
+        top_stack = stack(rotated_stacked_runes, rotated_stacked_runes)
 
-        return new_pic
-         
+        for i in range (1, n - 4):
+            top_stack = stack_frac((n - 2) / n, top_stack, rotated_stacked_runes)
 
+        original_orientation_bottom_stack = quarter_turn_right (stacked_runes)
+        combined_stack = stack_frac( (n - 1) / n, top_stack, original_orientation_bottom_stack)
 
-show(huge_cross(sail_bb, 5))
+        if n == 3:
+            combined_stack = rune
+        if n == 4:
+            combined_stack = stack(rotated_stacked_runes, rotated_stacked_runes)
+        
+        middle = stack_frac(1 / (n - 1), quarter_turn_right(stacked_runes), combined_stack)
+        complete_middle = stack_frac ( (n-1) / n , middle, quarter_turn_right(stacked_runes))
+        rotated_left_picture = quarter_turn_left(complete_middle)
+        complete_side = quarter_turn_left(stackn(n, rune))
+        top_half_completed_picture = stack_frac( 1 / (n - 1) , complete_side, rotated_left_picture)
+        rotated_left_completed_picture = stack_frac ( (n - 1) / n, top_half_completed_picture, complete_side)
+
+        return quarter_turn_right(rotated_left_completed_picture)
+    
+show(square_of_runes(nova_bb, 4))
 
 
 
