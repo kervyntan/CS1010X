@@ -18,4 +18,3 @@ def isPalindrome(number):
 #
 
 print(isPalindrome(100000001111111))
-        
