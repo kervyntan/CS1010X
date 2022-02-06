@@ -12,15 +12,12 @@ from runes import *
 # Task 1 #
 ##########
 
-def egyptian(a, b):
-     
-     return border
 # Test
 # show(egyptian(nova_bb, 5))
 
 def egypt (pic, n):
      rotated_left_rune = quarter_turn_left(pic)
-     side_of_middle = stackn(n - 2, rune)
+     side_of_middle = stackn(n - 2, rotated_left_rune)
      middle = stack_frac(1 / (n - 1), quarter_turn_right(side_of_middle), pic)
 
      complete_middle = stack_frac ( (n-1) / n , middle, quarter_turn_right(side_of_middle))
@@ -33,8 +30,8 @@ def egypt (pic, n):
 
      rotated_left_completed_picture = stack_frac ( (n - 1) / n, top_half_completed_picture, complete_side)
 
-     return quarter_turn_right(rotated_left_completed_picture)
+     return top_half_completed_picture
 
 
 
-show(egypt(nova_bb,5))
+show(egypt(nova_bb,3))

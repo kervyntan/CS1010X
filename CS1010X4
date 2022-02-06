@@ -1,0 +1,31 @@
+Lecture 4: How good is your solution
+
+1. Correct Solution
+   - Correct with respect to the objective, + Assumptions (we don't care about error checking)
+   - Must do testing - use code to set breakpoints to test for out of the ordinary cases - lecture 5
+   
+2. Metrics of a solution (being good/not optimal) - Time and space 
+   - Computer Science is not about "automating the manual processes", it's more about innovation 
+   - Then from innovation, we can change the processes to better utilize what autmation can bring about
+   - Must see the benefits of innovation of the result of the end-user experience
+   
+   - The "scientific" way of doing what is good or not is through how much resources your "solution" needs:
+     i. Space: hardware/memory is so cheap - still handheld devices still come with limited memory
+     ii. Time: Major issue, tricky (growth rate with respect to the size of the input)
+     k is ignored (constant) (because it does not care about absolute speed of the computer)
+     n (subscript 0) (is a designated input size that after this point, the growth is as given... before this point,
+     we don't really care (small numbers) )
+        
+        1. Decidable (solvable) vs undecidable problems: halting problem in computer; Not all problems can be solved by
+        computers
+        2. Tractable vs Intractable: technically, polynomial time algorithms are tractable, and if not poly, then
+        intractable
+        3. Practical is usually an algorithm that is below n^2... (n^3, n^4...)
+        4. Are you already doing your best in solving a problem?
+           - The time complexity of the PROBLEM aka lower bound of the problem. We know only a few lower bound of 
+           computatational problems Eg. sorting, searching
+           - Trade off of tiem and space.  CS = Algorithm + Data Structures. DS is the space, DS will dictate different
+           algorithms; More Space can possibly reduce the time needed to do a computation
+     
+     
+3. Can't escape from counting (CS1231)
