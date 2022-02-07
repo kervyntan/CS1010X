@@ -18,3 +18,28 @@ def isPalindrome(number):
 #
 
 print(isPalindrome(100000001111111))
+
+def printPyramid (length):
+    line_of_characters = '*'
+    for i in range (length, 0, - 1):
+        each_line = i * line_of_characters
+        print(each_line)
+
+print(printPyramid(5))
+
+
+c = 5
+def f(a):
+    def g(a):
+        d = a + c
+        print(d)
+    return g
+f(3)(4)
+
+p = 2
+def h(y):
+    def c(y):
+        t = y + p
+        print(t)
+    return c
+h(1)
