@@ -1,3 +1,5 @@
+from math import sin, pi
+
 def isPalindrome(number):
 
     number = str(number)
@@ -28,18 +30,30 @@ def printPyramid (length):
 print(printPyramid(5))
 
 
-c = 5
-def f(a):
-    def g(a):
-        d = a + c
-        print(d)
-    return g
-f(3)(4)
 
-p = 2
-def h(y):
-    def c(y):
-        t = y + p
-        print(t)
-    return c
-h(1)
+def deriv(g):
+    dx = 0.00001 # a small difference
+    return lambda x: (g(x + dx) - g(x)) / dx
+
+cos = deriv(sin)
+print(cos(pi / 4))
+
+def compose(f, g):
+    return lambda x: f(g(x))
+
+foo = lambda x: x+1
+bar = compose(foo, foo)
+print(compose(bar, bar)(10))
+
+def compose(f, g):
+    return lambda x: f(g(x))
+
+def add1(x):
+    return x + 1
+
+def times3(x):
+    return x * 3
+
+
+three_x_plus_1 = lambda x: compose(add1, times3)(x)
+print(three_x_plus_1)
