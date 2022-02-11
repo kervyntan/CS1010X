@@ -29,18 +29,20 @@ def g( x ):
     return x + y
 
 print(g ( y )+ y)
-# 18 - g(3) + 3
+# 18 -> g(3) + 3
 
 x = 4
 def foo( x ):
     return x ( 3 )
-print(foo ( lambda x : x + 1 ))
+print(foo ( lambda x : x + 1 )
+)
 # 4
 
 x = 5
 def bar(x , y ):
     return y ( x )
-print(bar (4 , lambda x : x ** 2 ))
+print(bar (4 , lambda x : x ** 2 )
+)
 
 # 16
 

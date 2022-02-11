@@ -33,6 +33,7 @@ identity = lambda x: x
 add1 = lambda x: x + 1
 sq = lambda x: x**2
 
+# (thrice(thrice)(add1)(6)) - thrice(
 # (i) print(thrice(thrice)(add1)(6))]
 # Explanation:
 # Inner thrice function takes add1 as parameter, returning compose(add1, compose(add1, add1))
